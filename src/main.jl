@@ -55,9 +55,11 @@ set `rocplot` option to `false`.
 function lroc(glmout; rocplot=true)
     rr = ROCAnalysis.roc(rocinput(glmout)...)
     println("Number of observations = ", nobs(glmout))
-    println("Area under ROC curve   = ", ROCAnalysis.AUC(rr))
+    rocval = ROCAnalysis.AUC(rr)
+    println("Area under ROC curve   = ", rocval)
     if rocplot
         plt = plot(rr)
         return plt
     end
+    return rocval
 end
