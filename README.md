@@ -80,7 +80,7 @@ BPMeds         0.26075     0.229636      1.14    0.2562  -0.189329    0.710829
 ──────────────────────────────────────────────────────────────────────────────── 
 
 
-# Area under the ROC Curve value and the ROC plot
+# Area under the ROC Curve (AUC) value and the ROC plot
 # Model 1
 lroc(logit1)
 
