@@ -101,7 +101,7 @@ roccomp(logit1, logit2)
 
 0.44452118332095947
 
-# This is the p-value under H₀: AUC for Model 1 ≠ AUC for Model 2
+# This is the p-value under H₀: AUC for Model 1 = AUC for Model 2
 
 # ROC curves can be drawn with rocplot
 plt = rocplot(logit1)
