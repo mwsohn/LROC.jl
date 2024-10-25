@@ -36,9 +36,8 @@ df.education = categorical(df.education);
 # estimate two logistic regression models
 # Model 1
 logit1 = glm(@formula(TenYearCHD ~ age + male + education + sysBP + diaBP + BMI), fram2, Bernoulli(), LogitLink());
-```
 
-StatsModels.TableRegressionModel{GeneralizedLinearModel{GLM.GlmResp{Vector{Float64}, Bernoulli{Float64}, LogitLink}, GLM.DensePredChol{Float64, LinearAlgebra.CholeskyPivoted{Float64, Matrix{Float64}, Vector{Int64}}}}, Matrix{Float64}}  
+<!-- StatsModels.TableRegressionModel{GeneralizedLinearModel{GLM.GlmResp{Vector{Float64}, Bernoulli{Float64}, LogitLink}, GLM.DensePredChol{Float64, LinearAlgebra.CholeskyPivoted{Float64, Matrix{Float64}, Vector{Int64}}}}, Matrix{Float64}}  
 
 TenYearCHD ~ 1 + age + male + education + sysBP + diaBP + BMI
 
@@ -55,13 +54,12 @@ education: 4  -0.071857    0.162861     -0.44    0.6591  -0.391058    0.247344
 sysBP          0.0204319   0.00343044    5.96    <1e-08   0.0137084   0.0271554
 diaBP         -0.00504329  0.00629717   -0.80    0.4232  -0.0173855   0.00729894
 BMI            0.00635771  0.0124658     0.51    0.6100  -0.0180748   0.0307902
-────────────────────────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────────────────────── -->
 
-```
 # Model 2
 logit2 = glm(@formula(TenYearCHD ~ age + male + education + sysBP + diaBP + BMI + sysBP + diaBP +BPMeds), fram2, Bernoulli(), LogitLink());
-```
 
+<!-- 
 StatsModels.TableRegressionModel{GeneralizedLinearModel{GLM.GlmResp{Vector{Float64}, Bernoulli{Float64}, LogitLink}, GLM.DensePredChol{Float64, LinearAlgebra.CholeskyPivoted{Float64, Matrix{Float64}, Vector{Int64}}}}, Matrix{Float64}}
 
 TenYearCHD ~ 1 + age + male + education + sysBP + diaBP + BMI + BPMeds
@@ -80,9 +78,9 @@ sysBP          0.0197647   0.00348217    5.68    <1e-07   0.0129397   0.0265896
 diaBP         -0.00491749  0.006301     -0.78    0.4351  -0.0172672   0.00743225
 BMI            0.00588079  0.0124819     0.47    0.6375  -0.0185832   0.0303448
 BPMeds         0.26075     0.229636      1.14    0.2562  -0.189329    0.710829
-────────────────────────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────────────────────── -->
 
-```
+
 # Area under the ROC Curve value and the ROC plot
 # Model 1
 lroc(logit1)
