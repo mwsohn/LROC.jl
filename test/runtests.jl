@@ -9,9 +9,9 @@ using CSV
 using GLM
 using CategoricalArrays
 
-df = CSV.read("framingham_heart_disease.csv", DataFrame, missingstring = "NA")
+df = CSV.read("framingham_heart_disease.csv", DataFrame, missingstring = "NA");
 
-df = df[completecases(df), :]
+df = df[completecases(df), :];
 
 # Number of observations:         3656
 # Number of variables:              16
@@ -36,9 +36,17 @@ df = df[completecases(df), :]
 #      16 │ TenYearCHD       Int64      0.0%  TenYearCHD
 # ────────┴───────────────────────────────────────────────────
 
-df.education = categorical(df.education) 
+df.education = categorical(df.education) ;
 
-logitmodel = fit(GeneralizedLinearModel, @formula(TenYearCHD ~ age + male + education + sysBP + diaBP + BMI), df, Bernoulli(), LogitLink())
+logit1 = fit(GeneralizedLinearModel, @formula(TenYearCHD ~ age + male + education + sysBP + diaBP + BMI), df, Bernoulli(), LogitLink());
+logit2 = fit(GeneralizedLinearModel, @formula(TenYearCHD ~ age + male + education + sysBP + diaBP + BMI + sysBP + diaBP + BPMeds), df, Bernoulli(), LogitLink());
+
+@test lroc(logit1, rocplot = false) ≈ 0.7286 atol = 0.001
+@test lroc(logit1, rocplot = false) ≈ 0.7290 atol = 0.001
+@test roccomp(logit1, logit2) ≈ 0.4445 atol = 0.001
+
+
+
 
 
 
