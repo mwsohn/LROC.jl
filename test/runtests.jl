@@ -8,8 +8,10 @@ using ROCAnalysis
 using CSV
 using GLM
 using CategoricalArrays
+using Test
+using LROC
 
-df = CSV.read("framingham_heart_disease.csv", DataFrame, missingstring = "NA");
+df = CSV.read("test\\framingham_heart_disease.csv", DataFrame, missingstring = "NA");
 
 df = df[completecases(df), :];
 
