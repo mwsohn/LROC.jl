@@ -1,7 +1,7 @@
 """
     rocinput(logitmodel)
 
-Takes a logit model from a GLM regression and produces two vectors called target and non-target 
+Takes a logit model from a GLM regression and produces two vectors `target` and `non-target`
 for input to `roc` function in the ROCAnalysis package.
 """
 function rocinput(logitmodel)
@@ -19,7 +19,7 @@ Produces an ROC Curve plot from a `Roc` object. `Roc` struct is defined in the R
 is created by `roc` function in the same package.
 """
 function plot(rocdata::Roc)
-    plt = plot(rocdata.pfa, 1.0 .- rocdata.pmiss, linetype=:steppre, legend=false, xlabel="1 - specificity", ylabel="sensitivity")
+    plt = plot(rocdata.pfa, 1.0 .- rocdata.pmiss, linetype=:steppost, legend=false, xlabel="1 - specificity", ylabel="sensitivity")
     plot!(plt, collect(0:1:1), collect(0:1:1), legend=false, lc=:black)
     return plt
 end
