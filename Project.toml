@@ -11,6 +11,6 @@ Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 julia = "1.6"
 GLM = "1.9"
 ROCAnalysis = "0.3.6"
-Plots = "2.0.0"
+Plots = "1.0"
 
 
