@@ -1,4 +1,4 @@
-# Lroc.jl
+# LogisticROC.jl
  
  Provides functions for computing the Area under ROC Curves for logistic regressions using the `ROCAnalysis` package. 
 
@@ -6,7 +6,7 @@
  ## Installation
  ```
 julia> using Pkg
-julia> Pkg.add("Lroc")
+julia> Pkg.add("LogisticROC")
 ```
 
  ## Functions
@@ -23,7 +23,7 @@ julia> Pkg.add("Lroc")
 
 ```
 # import packages to use in this tutorial
-using CSV, DataFrames, GLM, Lroc
+using CSV, DataFrames, GLM, LogisticROC
 
 # download data and convert it to a DataFrame. We will treat all "NA" values as missing.
 df = CSV.read("test/framingham_heart_disease.csv",DataFrame, missingstring = "NA");
