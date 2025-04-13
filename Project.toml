@@ -1,6 +1,6 @@
-name = "LROC"
+name = "LogisticROC"
 uuid = "6bf4ee07-1766-4a3a-9e7e-3ffe73513617"
-version = "0.0.1"
+version = "0.1.0"
 
 [deps]
 GLM = "38e38edf-8417-5370-95a0-9cbb8c7f171a"
