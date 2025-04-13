@@ -9,7 +9,7 @@ using CSV
 using GLM
 using CategoricalArrays
 using Test
-using Lroc
+using LogisticROC
 
 df = CSV.read("test\\framingham_heart_disease.csv", DataFrame, missingstring = "NA");
 
