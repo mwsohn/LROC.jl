@@ -1,11 +1,12 @@
 # LROC.jl
  
- Provides functions for computing the Area under ROC Curves for logistic regressions using the ROCAnalysis package. 
+ Provides functions for computing the Area under ROC Curves for logistic regressions using the `ROCAnalysis` package. 
 
 
  ## Installation
  ```
- Pkg.add("LROC.jl")
+julia> using Pkg
+julia> Pkg.add("LROC")
 ```
 
  ## Functions
